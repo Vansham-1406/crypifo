@@ -51,7 +51,7 @@ const News = () => {
                       <img src={item?.image?.thumbnail?.contentUrl} height="100px" width={"100px"} alt="author"/>
                     </div>
                     <div>
-                      <p className='dibbi-para'>{item.description}</p>
+                      <p className='dibbi-para'>{item.description.split('',200).join('').trim()}...</p>
                     </div>
                     <div className='author'>
                       <img src={item?.provider[0]?.image?.thumbnail?.contentUrl} alt="Author" height={"40px"} width="40px"/>

@@ -5,8 +5,6 @@ import axios from "axios";
 import Footer from "./footer";
 import { round } from "mathjs";
 import "./responsive.css";
-import MenuIcon from '@mui/icons-material/Menu';
-import Brow from './brow'
 
 const App = () => {
   const [coin, setCoin] = useState([]);
@@ -14,7 +12,7 @@ const App = () => {
   const [news, setNews] = useState([]);
 
   const [nav, setNav] = useState(true)
-
+  
   const navigate = useNavigate();
   useEffect(() => {
     axios
@@ -66,23 +64,13 @@ const App = () => {
         console.log("error", error);
       });
   }, []);
-  <Brow nav={nav}/>
+  // <Brow nav={nav}/>
+  console.log('nav', nav)
 
   return (
     <div>
       <div className="mainNavBar">
         <div className="subPart">
-          <div className="nav-mob">
-            <div>
-              <h1>CryptoCurrencies</h1>
-            </div>
-            <div className="icon" 
-            onClick={()=>{
-              setNav(!nav)
-            }}>
-              <MenuIcon style={{ fontSize: "40px" }} />
-            </div>
-          </div>
           <div className="mainPage">
             <h1>Global Crypto Currency Stats</h1>
             <div className="mainPage-sub">
@@ -176,7 +164,14 @@ const App = () => {
                         />
                       </div>
                       <div>
-                        <p className="dibbi-para">{item.description}</p>
+                        <p className="dibbi-para">{
+                          item.description.split('',140).join('').trim()
+                        }...</p>
+                       { 
+                            
+                            console.log()
+                            
+                       }
                       </div>
                       <div className="author">
                         <img

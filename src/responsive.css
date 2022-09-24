@@ -1,5 +1,9 @@
 @media (max-width:950px)
 {
+    .navbar{
+        display: none;
+    }
+
     .navbar1{
         display: none;
     }
@@ -11,6 +15,7 @@
     .mainPage{
         padding: 4vw;
     }
+
     .nav-mob{
         background-color:#001628;
         height: 75px;

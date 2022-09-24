@@ -3,6 +3,7 @@
     .navbar1{
         display: block;
         width: 30vw;
+        height: 100vh;
     }
 
     .navbar{
@@ -25,8 +26,6 @@
         justify-content: space-between;
         padding-top: 30px;
         position: fixed;
-        top: 0;
-        margin-bottom: 100px;
     }
 
     .nav-mob h1{
@@ -69,7 +68,48 @@
     .mainPage h1{
         margin-top: 130px;
     }
+
+    .cur{
+        margin-top: 100px;
+    }
+
+    .info-dat{
+        margin-right: 30px;
+        width: 75vw;
+      }
+
     .footer{
         width: 100vw;
     }
+}
+
+@media (max-width:550px) 
+{
+    .navbar1{
+        display: block;
+        width: 50vw;
+        height: 100vh;
+    }
+    .info{
+        padding: 0;
+    }
+    .cur{
+        padding: 0;
+    }
+    .cur-table{
+        padding:0;
+    }
+    .nav-mob h1{
+        font-size: calc(13vw/2);
+    }
+
+    .font-awe{
+        font-size: calc(15vw/2);
+    }
+
+    .info-dat{
+        margin-right: 30px;
+        width: 80vw;
+      }
+
 }

@@ -9,6 +9,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import PersonIcon from '@mui/icons-material/Person';
+import CloseIcon from '@mui/icons-material/Close';
 
 const Full = () => {
   const [coin, setCoin] = useState([]);
@@ -63,7 +64,12 @@ const Full = () => {
                 setNav(!nav);
               }}
             >
-              <MenuIcon style={{ fontSize: "40px" }} />
+              {
+                nav ? 
+                  <MenuIcon className="font-awe" />
+                  :
+                  <CloseIcon className="font-awe"/>
+              }
             </div>
           </div>
         <div className={nav ? "navbar" : "navbar1"}>

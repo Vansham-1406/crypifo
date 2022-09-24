@@ -21,16 +21,22 @@ a{
   display: block;
   background-color:#001628;
   width:20vw;
-  height:100vh;
+  height: 100vh;
   position: fixed;
+  overflow-y: scroll;
 }
 
 .navbar1{
   display: block;
   background-color:#001628;
+  height: 100vh;
   width:20vw;
-  height:100vh;
   position: fixed;
+  overflow-y: scroll;
+}
+
+.font-awe{
+  font-size: 50px;
 }
 
 .navbar h2{
@@ -61,6 +67,8 @@ a{
   margin: 5px;
 }
 
+
+
 ul li .tag .icon{
   color:white;
   padding: 0px 9px;
@@ -70,6 +78,34 @@ ul li .tag .icon{
 
 .tag:hover .icon{
   color:rgb(252, 138, 157);
+}
+
+.navbar1 h2{
+  color: #1990FF;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.navbar1 h2:hover{
+  color:aqua;
+  cursor: pointer;
+}
+
+.navbar1 ul {
+  margin-top: 50px;
+  padding-right: 20px;
+  padding-left: 5px;
+}
+
+.navbar1 ul li{
+  color: pink;
+  font-size: 18px;
+  text-decoration: none;
+  list-style: none;
+  padding: 10px;
+  font-weight:500;
+  font-family: sans-serif;
+  margin: 5px;
 }
 
 .tag{
@@ -103,7 +139,6 @@ ul li .tag .icon{
 
 .mainPage{
   background-color: #EFF2F5;
-  padding: 50px 0px;
 }
 
 .mainPage h1{
@@ -380,9 +415,10 @@ ul li .tag .icon{
 }
 
 /* CRYPTO CURRENCY SINGLE PAGE  */
+
 .cur{
   text-align: center;
-  padding: 0vw 4vw;
+  padding: 0vh 5vw;
   padding-top: 5vw;
 }
 
@@ -401,11 +437,16 @@ ul li .tag .icon{
 }
 
 .cur-table{
-  padding: 0vw 4vw;
+  padding: 0vw 5vw;
   padding-top: 2vw;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cur-table2{
+  margin-top: 50px;
 }
 
 .cur-table h3{
@@ -421,21 +462,18 @@ ul li .tag .icon{
   padding-bottom: 20px;
 }
 
-.cur-table1{
-  margin-right: 50px;
-}
-
 .info{
-  padding: 0vw 4vw;
-  padding-top: 2vw;
+  padding: 0vw 3vw;
+  padding-top: 0vw;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .info-dat{
   margin-right: 30px;
-  width: 35vw;
+  width: 65vw;
 }
 
 .info-dat h3{
@@ -450,6 +488,10 @@ ul li .tag .icon{
   font-size: 22px;
   margin-top: 40px;
   margin-bottom: 20px;
+}
+
+.link{
+  padding-bottom: 40px;
 }
 
 .link h3{

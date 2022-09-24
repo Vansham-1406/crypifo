@@ -1,11 +1,40 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './App.css'
 import Footer from './footer'
+import MenuIcon from "@mui/icons-material/Menu";
+import HomeIcon from '@mui/icons-material/Home';
+import ShowChartIcon from '@mui/icons-material/ShowChart';
+import LightbulbIcon from '@mui/icons-material/Lightbulb';
+import PersonIcon from '@mui/icons-material/Person';
+import {Link } from 'react-router-dom';
 
 const About = () => {
+  const [nav, setNav] = useState(true);
   return (
     <div>
       <div className="mainNavBar">
+      <div className="nav-mob">
+            <div>
+              <h1>CryptoCurrencies</h1>
+            </div>
+            <div
+              className="icon"
+              onClick={() => {
+                setNav(!nav);
+              }}
+            >
+              <MenuIcon style={{ fontSize: "40px" }} />
+            </div>
+          </div>
+        <div className={nav ? "navbar" : "navbar1"}>
+            <h2>CRYPTO CURRENCY</h2>
+            <ul>
+              <li className='active'><Link to="/" className='tag'><HomeIcon className='icon'/>Home</Link></li>
+              <li><Link to="/Crypto" className='tag'><ShowChartIcon className='icon'/>Crypto Currency</Link></li>
+              <li><Link to="/News" className='tag'><LightbulbIcon className='icon'/>News</Link></li>
+              <li><Link to="/About" className='tag'><PersonIcon className='icon'/>About</Link></li>
+            </ul>
+        </div>
           <div className="subPart">
             <div className="mainPage">
               <div>
@@ -32,8 +61,8 @@ const About = () => {
                 <p>3) REACT JS </p>
                 <p>4) MUI </p>
               </div>
-              <Footer/>
             </div>
+              <Footer/>
             </div>
             </div>
     </div>

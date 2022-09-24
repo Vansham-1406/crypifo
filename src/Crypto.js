@@ -1,7 +1,6 @@
 import React,{useState,useEffect} from 'react'
-import {useParams,useLocation } from 'react-router-dom'
+import {useParams,useLocation,Link } from 'react-router-dom'
 import axios from 'axios';
-import {round} from 'mathjs';
 
 
 import Table from '@mui/material/Table';
@@ -14,6 +13,11 @@ import Paper from '@mui/material/Paper';
 import ReactHtmlParser from "react-html-parser";
 
 import Footer from './footer'
+import MenuIcon from "@mui/icons-material/Menu";
+import HomeIcon from '@mui/icons-material/Home';
+import ShowChartIcon from '@mui/icons-material/ShowChart';
+import LightbulbIcon from '@mui/icons-material/Lightbulb';
+import PersonIcon from '@mui/icons-material/Person';
 
 function createData(
   name: string,
@@ -31,6 +35,7 @@ const Crypto = () => {
   
   const [dat, setDat] = useState({})
   const [link, setLink] = useState([])
+  const [nav, setNav] = useState(true);
   const x = useParams().id;
   
   const q = new URLSearchParams(useLocation().search);
@@ -74,6 +79,28 @@ const Crypto = () => {
       useParams().id &&
       <div>
         <div className="mainNavBar">
+        <div className="nav-mob">
+            <div>
+              <h1>CryptoCurrencies</h1>
+            </div>
+            <div
+              className="icon"
+              onClick={() => {
+                setNav(!nav);
+              }}
+            >
+              <MenuIcon style={{ fontSize: "40px" }} />
+            </div>
+          </div>
+        <div className={nav ? "navbar" : "navbar1"}>
+            <h2>CRYPTO CURRENCY</h2>
+            <ul>
+              <li className='active'><Link to="/" className='tag'><HomeIcon className='icon'/>Home</Link></li>
+              <li><Link to="/Crypto" className='tag'><ShowChartIcon className='icon'/>Crypto Currency</Link></li>
+              <li><Link to="/News" className='tag'><LightbulbIcon className='icon'/>News</Link></li>
+              <li><Link to="/About" className='tag'><PersonIcon className='icon'/>About</Link></li>
+            </ul>
+        </div>
           <div className="subPart">
             <div className="mainPage">
               <div className='cur'>
@@ -150,8 +177,8 @@ const Crypto = () => {
                   </TableContainer>
                   </div>
               </div>    
-              <Footer/>
             </div>
+              <Footer/>
           </div>
           </div>
       </div>

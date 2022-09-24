@@ -1,18 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import {Link } from 'react-router-dom';
 import "./App.css";
 import axios from "axios";
 import Footer from "./footer";
 import { round } from "mathjs";
 import "./responsive.css";
+import MenuIcon from "@mui/icons-material/Menu";
+import HomeIcon from '@mui/icons-material/Home';
+import ShowChartIcon from '@mui/icons-material/ShowChart';
+import LightbulbIcon from '@mui/icons-material/Lightbulb';
+import PersonIcon from '@mui/icons-material/Person';
 
 const App = () => {
   const [coin, setCoin] = useState([]);
   const [stats, setStats] = useState({});
   const [news, setNews] = useState([]);
 
-  const [nav, setNav] = useState(true)
-  
+  const [nav, setNav] = useState(true);
+
   const navigate = useNavigate();
   useEffect(() => {
     axios
@@ -64,12 +70,33 @@ const App = () => {
         console.log("error", error);
       });
   }, []);
-  // <Brow nav={nav}/>
   console.log('nav', nav)
 
   return (
     <div>
       <div className="mainNavBar">
+          <div className="nav-mob">
+            <div>
+              <h1>CryptoCurrencies</h1>
+            </div>
+            <div
+              className="icon"
+              onClick={() => {
+                setNav(!nav);
+              }}
+            >
+              <MenuIcon style={{ fontSize: "40px" }} />
+            </div>
+          </div>
+        <div className={nav ? "navbar" : "navbar1"}>
+            <h2>CRYPTO CURRENCY</h2>
+            <ul>
+              <li className='active'><Link to="/" className='tag'><HomeIcon className='icon'/>Home</Link></li>
+              <li><Link to="/Crypto" className='tag'><ShowChartIcon className='icon'/>Crypto Currency</Link></li>
+              <li><Link to="/News" className='tag'><LightbulbIcon className='icon'/>News</Link></li>
+              <li><Link to="/About" className='tag'><PersonIcon className='icon'/>About</Link></li>
+            </ul>
+        </div>
         <div className="subPart">
           <div className="mainPage">
             <h1>Global Crypto Currency Stats</h1>
@@ -96,7 +123,7 @@ const App = () => {
               </div>
             </div>
             <div className="mainPage-cry">
-              <h1>Top 10 Crypto Currencies</h1>
+              <h2>Top 10 Crypto Currencies</h2>
               <h3
                 onClick={() => {
                   navigate("/Crypto");
@@ -140,7 +167,7 @@ const App = () => {
               ))}
             </div>
             <div className="mainPage-cry">
-              <h1>Latest Crypto News</h1>
+              <h2>Latest Crypto News</h2>
               <h3
                 onClick={() => {
                   navigate("/News");
@@ -149,7 +176,7 @@ const App = () => {
                 Show More
               </h3>
             </div>
-            <div className="mainDibbi">
+            <div className="mainDibbi1">
               {news.map((item) => (
                 <div>
                   <a href={item.url}>
@@ -164,14 +191,10 @@ const App = () => {
                         />
                       </div>
                       <div>
-                        <p className="dibbi-para">{
-                          item.description.split('',140).join('').trim()
-                        }...</p>
-                       { 
-                            
-                            console.log()
-                            
-                       }
+                        <p className="dibbi-para">
+                          {item.description.split("", 140).join("").trim()}...
+                        </p>
+                        {console.log()}
                       </div>
                       <div className="author">
                         <img
@@ -189,8 +212,8 @@ const App = () => {
                 </div>
               ))}
             </div>
-            <Footer />
           </div>
+            <Footer />
         </div>
       </div>
     </div>

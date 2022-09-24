@@ -1,10 +1,11 @@
 @media (max-width:950px)
 {
-    .navbar{
-        display: none;
+    .navbar1{
+        display: block;
+        width: 30vw;
     }
 
-    .navbar1{
+    .navbar{
         display: none;
     }
 
@@ -17,11 +18,15 @@
     }
 
     .nav-mob{
+        width: 100vw;
         background-color:#001628;
         height: 75px;
         display: flex;
         justify-content: space-between;
         padding-top: 30px;
+        position: fixed;
+        top: 0;
+        margin-bottom: 100px;
     }
 
     .nav-mob h1{
@@ -37,7 +42,34 @@
         padding-right: 5vw;
     }
 
+    .inp{
+    margin-top: 100px;
+    }
+
+    .mainDibbi{
+        margin-top: 100px;
+    }
+
+    .mainDibbi1{
+        margin-top: 20px;
+    }
+
+    .mainPage-cry h2{
+        padding: 0;
+    }
+
+    .about-head{
+        margin-top: 100px;
+    }
+
     .mainPage-sub{
         width: 85vw;
+    }
+
+    .mainPage h1{
+        margin-top: 130px;
+    }
+    .footer{
+        width: 100vw;
     }
 }

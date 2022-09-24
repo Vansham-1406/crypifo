@@ -18,6 +18,7 @@ a{
 }
 
 .navbar{
+  display: block;
   background-color:#001628;
   width:20vw;
   height:100vh;
@@ -25,6 +26,7 @@ a{
 }
 
 .navbar1{
+  display: block;
   background-color:#001628;
   width:20vw;
   height:100vh;
@@ -96,10 +98,12 @@ ul li .tag .icon{
   right: 0;
   top: 0;
   flex-wrap: wrap;
+  z-index: -1;
 }
 
 .mainPage{
   background-color: #EFF2F5;
+  padding: 50px 0px;
 }
 
 .mainPage h1{
@@ -135,7 +139,14 @@ ul li .tag .icon{
   justify-content: space-between;
 }
 
+.mainPage-cry h2{
+  margin-top: 30px;
+  padding-bottom: 40px;
+  padding-left: 20px;
+}
+
 .mainPage-cry h3{
+  margin-top: 30px;
   padding:0;
   padding-right: 30px;
   color: #1990FF;
@@ -235,6 +246,13 @@ ul li .tag .icon{
   justify-content: center;
 }
 
+.mainDibbi1{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .dibbi-text{
   display: flex;
   justify-content: space-between;
@@ -275,7 +293,6 @@ ul li .tag .icon{
 
 /* FOOTER */
 .footer{
-  margin-top: 50px;
   height: 100px;
   background-color:#001628;
   display: flex;
@@ -284,7 +301,8 @@ ul li .tag .icon{
   color: white;
   font-weight: 900;
   text-align: center;
-  padding: 5px;
+  z-index: 999;
+  bottom: 0;
 }
 
 .footer h5{

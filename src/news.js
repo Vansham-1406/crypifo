@@ -1,12 +1,18 @@
 import React,{useState,useEffect} from "react";
-import { useLocation} from "react-router-dom";
+import { useLocation,Link} from "react-router-dom";
 import "./App.css";
 import axios from "axios";
 import Footer from './footer';
+import MenuIcon from "@mui/icons-material/Menu";
+import HomeIcon from '@mui/icons-material/Home';
+import ShowChartIcon from '@mui/icons-material/ShowChart';
+import LightbulbIcon from '@mui/icons-material/Lightbulb';
+import PersonIcon from '@mui/icons-material/Person';
 
 const News = () => {
   // const navigate = useNavigate();
   const [news, setNews] = useState([])
+  const [nav, setNav] = useState(true);
 
   useEffect(() => {
     axios
@@ -38,6 +44,28 @@ const News = () => {
     <div>
       {useLocation().pathname === "/News" && (
         <div className="mainNavBar">
+          <div className="nav-mob">
+            <div>
+              <h1>CryptoCurrencies</h1>
+            </div>
+            <div
+              className="icon"
+              onClick={() => {
+                setNav(!nav);
+              }}
+            >
+              <MenuIcon style={{ fontSize: "40px" }} />
+            </div>
+          </div>
+        <div className={nav ? "navbar" : "navbar1"}>
+            <h2>CRYPTO CURRENCY</h2>
+            <ul>
+              <li className='active'><Link to="/" className='tag'><HomeIcon className='icon'/>Home</Link></li>
+              <li><Link to="/Crypto" className='tag'><ShowChartIcon className='icon'/>Crypto Currency</Link></li>
+              <li><Link to="/News" className='tag'><LightbulbIcon className='icon'/>News</Link></li>
+              <li><Link to="/About" className='tag'><PersonIcon className='icon'/>About</Link></li>
+            </ul>
+        </div>
           <div className="subPart">
             <div className="mainPage">
             <div className='mainDibbi'>
@@ -63,8 +91,8 @@ const News = () => {
                 ))
               }
               </div>
-              <Footer/>
             </div>
+              <Footer/>
           </div>
         </div>
       )}

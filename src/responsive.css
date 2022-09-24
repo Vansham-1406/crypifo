@@ -1,0 +1,38 @@
+@media (max-width:950px)
+{
+    .navbar1{
+        display: none;
+    }
+
+    .subPart{
+        width: 100vw;
+    }
+
+    .mainPage{
+        padding: 4vw;
+    }
+    .nav-mob{
+        background-color:#001628;
+        height: 75px;
+        display: flex;
+        justify-content: space-between;
+        padding-top: 30px;
+    }
+
+    .nav-mob h1{
+        color: #1990FF;
+        padding-left: 5vw;
+    }
+    .nav-mob h1:hover{
+        color:aqua;
+    }
+
+    .nav-mob .icon{
+        color: #1990FF;
+        padding-right: 5vw;
+    }
+
+    .mainPage-sub{
+        width: 85vw;
+    }
+}

@@ -13,7 +13,18 @@ a{
   text-decoration: none;
 }
 
+.nav-mob{
+  display: none;
+}
+
 .navbar{
+  background-color:#001628;
+  width:20vw;
+  height:100vh;
+  position: fixed;
+}
+
+.navbar1{
   background-color:#001628;
   width:20vw;
   height:100vh;

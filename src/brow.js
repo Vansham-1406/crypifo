@@ -11,10 +11,11 @@ import PersonIcon from '@mui/icons-material/Person';
 import Crypto from './Crypto';
 
 
-const Brow = () => {
+const Brow = ({nav}) => {
+  console.log('nav', nav)
   return (
     <div>
-        <div className='navbar'>
+        <div className={"navbar"}>
             <h2>CRYPTO CURRENCY</h2>
             <ul>
               <li className='active'><Link to="/" className='tag'><HomeIcon className='icon'/>Home</Link></li>

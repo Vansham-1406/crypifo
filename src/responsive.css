@@ -110,6 +110,10 @@
     .info-dat{
         margin-right: 30px;
         width: 80vw;
-      }
+    }
+
+    .dibbi{
+        margin: 0;
+    }
 
 }

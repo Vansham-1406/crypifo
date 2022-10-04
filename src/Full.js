@@ -89,7 +89,8 @@ const Full = () => {
                   placeholder="Search Here"
                   className="mainInp"
                   onChange={(e) => {
-                    if (e.target.value) {
+                    if (e.target.value) 
+                    {
                       const save = coin.filter((item)=> item.name.toLowerCase().includes(e.target.value.toLowerCase()))
                       setCoin(save)
                     }

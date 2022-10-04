@@ -40,7 +40,6 @@ const News = () => {
     });
   }, [])
 
-  console.log('news', news)
   return (
     <div>
       {useLocation().pathname === "/News" && (

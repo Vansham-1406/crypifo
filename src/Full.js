@@ -13,7 +13,7 @@ import CloseIcon from '@mui/icons-material/Close';
 
 const Full = () => {
   const [coin, setCoin] = useState([]);
-  const [search, setSearch] = useState("");
+  // eslint-disable-next-line
   const [tempSearch, setTempSearch] = useState([]);
   const [nav, setNav] = useState(true);
 

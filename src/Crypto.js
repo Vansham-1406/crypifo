@@ -49,6 +49,7 @@ const Crypto = () => {
       .catch((error) => {
         console.log("error", error);
       });
+      // eslint-disable-next-line
   }, []);
 
   const rows = [

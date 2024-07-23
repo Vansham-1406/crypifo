@@ -14,6 +14,7 @@
     "axios": "^0.27.2",
     "buffer": "^6.0.3",
     "mathjs": "^11.2.1",
+    "moment": "^2.30.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-html-parser": "^2.0.2",

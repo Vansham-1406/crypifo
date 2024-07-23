@@ -12,6 +12,7 @@ import ShowChartIcon from '@mui/icons-material/ShowChart';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import PersonIcon from '@mui/icons-material/Person';
 import CloseIcon from '@mui/icons-material/Close';
+import moment from 'moment';
 
 const App = () => {
   const [coin, setCoin] = useState([]);
@@ -49,29 +50,23 @@ const App = () => {
 
   useEffect(() => {
     axios
-      .get("https://bing-news-search1.p.rapidapi.com/news/search", {
-        params: {
-          q: "cryptocurrency",
-          count: "6",
-          freshness: "Day",
-          textFormat: "Raw",
-          safeSearch: "Off",
-        },
+      .get("https://cryptocurrency-news2.p.rapidapi.com/v1/coindesk", {
         headers: {
-          "X-BingApis-SDK": "true",
           "X-RapidAPI-Key":
-            "d00cef50edmshebd666b51e7e5e2p144803jsnebecc2a2481c",
-          "X-RapidAPI-Host": "bing-news-search1.p.rapidapi.com",
+            "7cf9598f86mshbf1d594046b0bbap174be7jsn287c463a1d1f",
+          "X-RapidAPI-Host": "cryptocurrency-news2.p.rapidapi.com",
         },
       })
       .then((response) => {
-        setNews(response.data.value);
+        const newsData = response?.data?.data;
+        if (newsData && newsData.length > 0) {
+          setNews(newsData.slice(0, 6));
+        }
       })
       .catch((error) => {
         console.log("error", error);
       });
   }, []);
-  console.log('nav', nav)
 
   return (
     <div>
@@ -183,14 +178,17 @@ const App = () => {
               </h3>
             </div>
             <div className="mainDibbi1">
-              {news.map((item) => (
-                <div>
-                  <a href={item.url}>
+              {
+              news.map((item,index) => (
+                <div key={index}>
+                  <a href={item?.url}>
                     <div className="dibbi">
                       <div className="dibbi-text">
-                        <h4>{item.name}</h4>
+                        <h4>
+                          {item?.title}
+                        </h4>
                         <img
-                          src={item?.image?.thumbnail?.contentUrl}
+                          src={item?.thumbnail}
                           height="100px"
                           width={"100px"}
                           alt="author"
@@ -200,17 +198,12 @@ const App = () => {
                         <p className="dibbi-para">
                           {item.description.split("", 140).join("").trim()}...
                         </p>
-                        {console.log()}
                       </div>
                       <div className="author">
-                        <img
-                          src={item?.provider[0]?.image?.thumbnail?.contentUrl}
-                          alt="Author"
-                          height={"40px"}
-                          width="40px"
-                        />
                         <p>
-                          <b>{item.provider[0].name}</b>
+                          <b>
+                            {moment(item?.createdAt).format('ddd, DD MMM YYYY')}
+                          </b>
                         </p>
                       </div>
                     </div>
